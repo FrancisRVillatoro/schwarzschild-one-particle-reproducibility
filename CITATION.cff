@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software or its numerical results, please cite the archived Zenodo release."
+title: "Schwarzschild one-particle and Kasner fixed-point reproducibility"
+type: software
+version: 1.0.0
+date-released: 2026-08-19
+authors:
+  - family-names: Villatoro
+    given-names: Francisco R.
+    affiliation: Universidad de Málaga
+license: MIT
+abstract: >-
+  Numerical and symbolic reproducibility package supporting calculations associated
+  with "Fate of a one-particle state approaching the Schwarzschild spacelike singularity"
+  and overlapping Kasner fixed-point results reported in
+  "Universal Quantum Kasner Fixed Point at the Schwarzschild Singularity".
+keywords:
+  - Schwarzschild black hole
+  - black-hole interior
+  - quantum field theory in curved spacetime
+  - semiclassical gravity
+  - Kasner spacetime
+  - renormalized stress-energy tensor
+  - adiabatic renormalization
+  - Bogoliubov transformations
+  - reproducible research
+references:
+  - type: article
+    title: "Fate of a one-particle state approaching the Schwarzschild spacelike singularity"
+    authors:
+      - family-names: Villatoro
+        given-names: Francisco R.
+    year: 2026
+  - type: article
+    title: "Universal Quantum Kasner Fixed Point at the Schwarzschild Singularity"
+    authors:
+      - family-names: Villatoro
+        given-names: Francisco R.
+    year: 2026
+    doi: 10.5281/zenodo.22011858

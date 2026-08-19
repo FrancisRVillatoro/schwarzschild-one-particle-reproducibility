@@ -1,0 +1,106 @@
+FINAL MATHEMATICAL AUDIT — TERMINAL KASNER RSET
+=================================================
+
+VERDICT
+-------
+The fourth-order Kasner RSET calculation is internally consistent and its
+new algebraic core has been independently rederived.
+
+Verified exactly:
+1. Fourth-order WKB/Riccati recurrence used in kasner_rset_core.py.
+2. Minimal-scalar modal stress tensor and
+       p_parallel - p_perp = (lambda^2/2)(3u^2-1)|psi|^2.
+3. Angular fourth-order subtraction:
+       J_mu(lambda)=int_0^1 (3u^2-1) A_ad^(4) du
+   and its massless limit
+       J_0(lambda)=-1/(63 lambda^3).
+4. Nonuniform massless residue
+       Delta_IR=-523/(498960 pi^2).
+5. Conservation and trace reconstruction formulas.
+6. Schwarzschild/Kasner conversion.
+
+Independent numerical checks:
+- Exact-mode complex integration reproduces the u=0 and u=1 Hankel axes
+  at ~1e-11 or better over representative lambda.
+- Changing the WKB matching frequency from 60 to 240 changes representative
+  amplitudes by <=~1e-10 relative.
+- An independent Riccati evolution agrees with the direct complex-mode
+  evolution pointwise at ~1e-11--1e-13, and its lower-resolution integrated
+  Delta_dyn differs by only ~5.4e-9 absolute (~7.6e-5 relative).
+- The finite-mass regulator computation approaches the analytic Delta_K
+  to O(1e-7) absolute at the smallest checked masses.
+
+Safe numerical values:
+    C_K       = 1.59555(2)e-4
+    Delta_dyn = 7.0609(3)e-5
+    Delta_IR  = -523/(498960 pi^2)
+              = -1.062028600388e-4
+    Delta_K   = -3.5594(3)e-5
+
+Reconstructed Kasner tensor:
+    C_rho      = 5.9211e-5
+    C_parallel = 1.3018e-4
+    C_perp     = 1.6577e-4
+
+Leading Schwarzschild prediction:
+    lambda_t    = 2.6361e-3
+    lambda_r    = -1.1990e-3
+    lambda_perp = 3.3568e-3
+    q_K         = 7.1800e-4
+
+IMPORTANT REMAINING PROOF-LEVEL ISSUE
+-------------------------------------
+The calculation above is a robust RSET calculation on the exact terminal
+Kasner fixed-point geometry. To state it as a theorem for the leading
+Schwarzschild RSET, the manuscript should strengthen the existing
+trajectory-restricted scaling theorem to an anisotropic local spacetime
+scaling theorem:
+    sigma = eps y,
+    x-x_* = eps^(4/3) X,
+    z-z_* = eps^(1/3) Z,
+with
+    eps^2 W_Schw(F_eps xi,F_eps xi') -> W_K(xi,xi')
+locally/distributionally, together with sufficient differentiated,
+adiabatically-subtracted convergence to pass the point-split stress tensor
+to the limit.
+
+Without that lemma, the safest wording is "parameter-free terminal Kasner
+RSET prediction/benchmark for Schwarzschild", strongly supported by the
+Jiang-Jiang numerical plateaus, rather than a fully proved Schwarzschild
+RSET theorem.
+
+EXTERNAL COMPARISON
+-------------------
+Jiang-Jiang raw coefficients:
+    lambda_t    = 2.6357e-3
+    lambda_r    = -1.1926e-3
+    lambda_perp = 3.3494e-3
+    q           = 7.1782e-4
+
+Because their raw tensor satisfies the locking identities only to finite
+numerical accuracy, the most meaningful independent comparisons are:
+- q_K vs q: relative difference ~2.5e-4;
+- Delta_K vs (4/81)(lambda_t-lambda_perp): relative difference ~9.8e-3.
+Thus the tensor-level benchmark should be described conservatively as
+agreement at about the 1% level, with substantially stronger agreement in
+the vacuum-polarization coefficient. Do not advertise the 0.014% agreement
+of lambda_t as three independent digits of validation: the reconstructed
+components are constrained combinations of only two independent Kasner
+numbers, C_K and Delta_K.
+
+REPRODUCIBILITY CLEANUP
+-----------------------
+kasner_rset_core.py contains exploratory finite-mass full-component
+integrators that become ill-conditioned in the deep IR. They are not used
+by kasner_complete_rset.py. Before publication, separate them from the
+production reproducer or mark them explicitly as diagnostics.
+
+
+v7.1 UV-tail addendum
+----------------------
+An external independent sixth-order audit fixes the first omitted massless
+angular coefficients exactly as c7=-1/2835 for the vacuum-polarization
+bracket and d7=4/2835 for the anisotropic RSET bracket.  The quoted
+Delta_dyn uncertainty has therefore been widened to 3e-9 absolute, and the
+production scripts no longer infer the leading tail from the numerically
+ill-conditioned lambda>16 region.

@@ -1,0 +1,46 @@
+COMPLETE TERMINAL KASNER RSET -- v7.1 final
+===========================================
+
+Input from independently audited vacuum-polarization calculation:
+C_K = 1.595550000000e-04
+q_K = 9 C_K / 2 = 7.179975000000e-04
+
+Exact Ricci-flat trace-anomaly coefficient:
+A_geom = 1/(1215 pi^2) = 8.339192069328e-05
+Trace coefficient T_K = 2 C_K + A_geom = 4.025019206933e-04
+
+Independent anisotropic observable:
+Delta_K = C_parallel - C_perp
+
+Regulator-free massless dynamic integral:
+Delta_dyn = 7.060900000000e-05 +/- 3.0e-09
+The leading UV coefficient is d7=4/2835; the subleading lambda^-9 contribution is included in the quoted uncertainty.
+
+Nonuniform fourth-order adiabatic IR residue:
+Delta_IR = -523/(498960 pi^2) = -1.062028600388e-04
+
+Therefore:
+Delta_K = -3.559386003877e-05
+
+Conservation:
+4 C_perp = C_parallel + 9 C_rho
+
+Trace:
+-C_rho + C_parallel + 2 C_perp = 2 C_K + 1/(1215 pi^2)
+
+Solved coefficients:
+C_rho      = 5.921120509635e-05
+C_parallel = 1.301751352374e-04
+C_perp     = 1.657689952761e-04
+
+Kasner RSET:
+<T^a_b>_ren = sigma^(-4) diag(-C_rho, C_parallel, C_perp, C_perp)
+
+Schwarzschild conversion sigma^(-4)=81 M^2/(4 r^6):
+lambda_t    = 2.636046488557e-03
+lambda_r    = -1.199026903201e-03
+lambda_perp = 3.356822154342e-03
+
+Published rounded values used in the manuscript:
+(C_rho,C_parallel,C_perp) = (5.9211,13.018,16.577)e-5
+(lambda_t,lambda_r,lambda_perp) = (2.6361,-1.1990,3.3568)e-3

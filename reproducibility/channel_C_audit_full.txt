@@ -1,0 +1,48 @@
+CHANNEL C AUDIT — EXACT ENDPOINT-WRONSKIAN PROJECTION
+=====================================================
+
+Historical preparation: k=2, l=2, mu=2, 2M=1, r0=0.999,
+first-order WKB for chi=sqrt(q)phi including amplitude derivative.
+
+1. Reproduction of historical table by exact endpoint projection
+channel   k  l  mu  Re beta_H  Im beta_H  exact |beta_H|^2  v4 rounded n_inf  Im W[v,v*]
+      A 2.0  0 2.0   0.323078   0.161584          0.130489           0.13054         1.0
+      B 2.0  1 2.0   0.042327  -0.037809          0.003221           0.00323         1.0
+      C 2.0  2 2.0   0.000361  -0.004961          0.000025           0.00002         1.0
+      D 2.0  0 0.0   0.306413   0.244138          0.153492           0.15362         1.0
+
+2. Channel C convergence with endpoint cutoff
+       r_eps  Re beta_H  Im beta_H  |beta_H|^2  Im W[v,v*]
+1.000000e-06   0.000361  -0.004969    0.000025         1.0
+1.000000e-08   0.000361  -0.004961    0.000025         1.0
+1.000000e-10   0.000361  -0.004961    0.000025         1.0
+1.000000e-12   0.000361  -0.004961    0.000025         1.0
+
+3. Sensitivity to finite-surface WKB preparation
+    r0              preparation  Re beta_H  Im beta_H  |beta_H|^2
+0.9900         leading WKB only   0.043728   0.039741    0.003491
+0.9900 WKB+amplitude derivative  -0.008390   0.007249    0.000123
+0.9990         leading WKB only   0.027102  -0.060656    0.004414
+0.9990 WKB+amplitude derivative   0.000361  -0.004961    0.000025
+0.9999         leading WKB only  -0.050450  -0.027581    0.003306
+0.9999 WKB+amplitude derivative   0.008268  -0.006062    0.000105
+
+4. Genuine simple zero for the r0=0.999 preparation
+      k*      mu*     Re beta_H     Im beta_H   |beta_H|^2  det d(Re beta,Im beta)/d(k,mu)
+2.505694 0.155623 -3.265257e-12 -1.137153e-12 1.195502e-23                       -0.000032
+
+5. Motion of that zero under change of preparation surface
+    r0  root_success       k*      mu*   |beta_H|^2
+0.9900          True 2.416077 0.408614 1.753292e-24
+0.9990          True 2.505694 0.155623 1.170221e-23
+0.9999          True 2.554221 0.168052 2.651685e-22
+
+CONCLUSION
+Channel C is NOT an exact zero. For the historical preparation,
+|beta_H|^2 = 2.47418e-5, stable under endpoint-cutoff refinement.
+The old tabulated 0.00002 is a rounded finite-window estimate.
+The small value is not preparation-invariant: changing r0 or omitting
+the WKB amplitude-derivative term changes |beta_H|^2 by factors of
+several to ~10^2. Exact zero-squeeze points do exist as isolated simple
+zeros of the matching map, but their positions move with r0, demonstrating
+that they are preparation-dependent resonances, not universal channels.

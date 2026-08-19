@@ -1,0 +1,7 @@
+kind,lambda_lo,lambda_hi,Delta_dyn_piece
+numerical,0.0,0.2,7.208872317771359e-06
+numerical,0.2,1.0,4.483451906185698e-05
+numerical,1.0,4.0,1.7255756662661466e-05
+numerical,4.0,16.0,1.2386574727704425e-06
+analytic_d7_tail,16,inf,6.980350504459999e-08
+subleading_tail_estimate,16,inf,1.3909798951561239e-09

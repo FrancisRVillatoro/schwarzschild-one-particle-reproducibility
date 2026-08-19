@@ -1,0 +1,29 @@
+Kasner vacuum-polarization integral reproduction
+===============================================
+
+ lambda   u  numeric  exact_Hankel  relative_error
+    0.1 0.0 3.787450      3.787450   -3.511968e-12
+    1.0 0.0 0.493960      0.493960    1.099891e-10
+    1.0 1.0 0.451053      0.451053   -3.403246e-08
+   10.0 1.0 0.049892      0.049892   -4.176985e-08
+
+                           quantity         value
+                  coarse, lambda<=8 -2.626158e-04
+                    fine, lambda<=8 -2.626160e-04
+                 tail fit, lambda>8 -1.104295e-09
+                        C_dyn total -2.626171e-04
+massless-limit residue 1/(240 pi^2)  4.221716e-04
+                                C_K  1.595545e-04
+                Jiang-Jiang 2 q_J/9  1.595156e-04
+
+ lambda     g(lambda)  lambda^5 g(lambda)
+    6.0 -4.725687e-08           -0.000367
+    8.0 -1.089195e-08           -0.000357
+   10.0 -3.514680e-09           -0.000351
+   12.0 -1.508286e-09           -0.000375
+
+C_K=1.595544675108e-04
+C_J=1.595155555556e-04
+relative_difference=2.439383115032e-04
+q_K=7.179951037988e-04
+q_J=7.178200000000e-04
