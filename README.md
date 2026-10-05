@@ -1,49 +1,46 @@
 # Schwarzschild one-particle and Kasner fixed-point reproducibility
 
-Numerical and symbolic reproducibility package associated with the research article
+Numerical and symbolic reproducibility package supporting two related manuscripts on quantum fields near the Schwarzschild spacelike singularity:
 
-> Francisco R. Villatoro, *Fate of a one-particle state approaching the Schwarzschild spacelike singularity* (2026).
+1. Francisco R. Villatoro, *A universal Kasner scaling limit for Hadamard states in the Schwarzschild interior* (2026).
+2. Francisco R. Villatoro, *Particle number, terminal states and local stress near the Schwarzschild singularity* (2026).
 
-The repository contains **only reproducibility material**: scientific Python code, symbolic checks, compact reference outputs, and documentation. It does **not** contain the article source or PDF.
+The repository contains reproducibility material only: scientific Python code, symbolic checks, compact reference outputs, and documentation. It does not contain manuscript source or PDFs.
 
-The package also reproduces the overlapping Kasner fixed-point and renormalized-observable results used in the companion preprint
+## Version 1.1.0
 
-> Francisco R. Villatoro, *Universal Quantum Kasner Fixed Point at the Schwarzschild Singularity* (2026), Zenodo v1, DOI: `10.5281/zenodo.22011858` (all versions: `10.5281/zenodo.22011857`).
+Version 1.1.0 reorganizes the package into independent `paper_I/` and `paper_II/` reproducibility trees and adds the calculations used in the revised manuscripts.
 
-The main reproducibility targets are:
+Major additions relative to v1.0.0 include:
 
-1. the terminal Kasner vacuum-polarization coefficient `C_K` and its Schwarzschild normalization `q_K`;
-2. the complete leading terminal Kasner renormalized stress-energy tensor (RSET), including the exact infrared residue and analytically controlled ultraviolet tails;
-3. the symbolic fourth- and sixth-order adiabatic/WKB checks used in the RSET calculation; and
-4. the endpoint-Hankel audit of the historical channels, including the channel-C near-cancellation and isolated zero-squeeze matching resonances.
+- convergence studies and uncertainty estimates for `C_dyn` and `Delta_dyn`;
+- direct ultraviolet fitting of the subleading `lambda^-9` and higher terms for the Kasner RSET;
+- exact symbolic adiabatic checks used in Paper I;
+- equal-time Hadamard point splitting on the Kasner geometry and the finite constants `1/(240*pi^2)` and `-523/(498960*pi^2)`;
+- numerical and symbolic checks for the Paper II endpoint-Hankel asymptotics, fixed-angular towers, generic rays, the exceptional maximal-volume slice, and one-particle stress asymptotics.
 
-The Jiang--Jiang Schwarzschild values quoted for comparison are used **only as external benchmarks** and are not inputs to the calculations.
+The archived v1.0.0 release remains immutable and can be used to reproduce the earlier manuscript state.
 
 ## Repository layout
 
-- `reproducibility/` — scientific Python scripts, symbolic checks, reference CSV/TXT outputs, and detailed reproduction notes.
-- `run_quick_checks.sh` — fast symbolic and endpoint-Hankel consistency checks.
-- `run_full_reproduction.sh` — production numerical calculations plus the quick checks.
-- `requirements.txt` — tested Python dependencies.
-- `CITATION.cff` — citation metadata for GitHub/Zenodo.
-- `SHA256SUMS` — checksums for the archived release files.
+- `reproducibility/paper_I/` — Kasner scaling fixed-point numerical/symbolic calculations and convergence audits.
+- `reproducibility/paper_II/` — particle-number, endpoint-Hankel, ultraviolet-obstruction and one-particle-stress checks.
+- `reproducibility/MANIFEST.md` — detailed mapping from manuscript results to scripts and frozen outputs.
+- `run_quick_checks.sh` — fast symbolic checks for both papers.
+- `run_full_reproduction.sh` — principal numerical and symbolic calculations for both papers.
+- `requirements.txt` — Python dependencies.
+- `CITATION.cff` — citation metadata used by GitHub/Zenodo.
+- `SHA256SUMS` — release integrity manifest.
 
 ## Environment
 
-The release was packaged and audited with Python 3.13.5 and:
-
-- NumPy 2.3.5
-- SciPy 1.17.0
-- pandas 2.2.3
-- SymPy 1.14.0
-
-Create an isolated environment and install:
+Install the pinned dependencies with
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-Equivalent compatible versions may work, but the versions above define the tested environment for this release.
+The scripts require NumPy, SciPy, pandas, SymPy and mpmath.
 
 ## Quick checks
 
@@ -53,64 +50,38 @@ From the repository root:
 bash run_quick_checks.sh
 ```
 
-These checks rederive the exact fourth-order angular subtraction and infrared residue, verify the analytic sixth-order ultraviolet coefficients, and reconstruct the endpoint-Hankel channel audit. Expected symbolic identities include
-
-- `J_0(lambda) = -1/(63 lambda^3)`,
-- `Delta_IR = -523/(498960 pi^2)`,
-- `c7 = -1/2835`,
-- `d7 = 4/2835`.
-
-For the historical channel C, the conserved-Wronskian projection gives a small but nonzero endpoint-Hankel occupation, approximately `2.47e-5`.
+These rederive the main exact symbolic identities and the Kasner point-splitting constants for Paper I and the principal symbolic identities of Paper II.
 
 ## Full numerical reproduction
 
-Run:
+From the repository root:
 
 ```bash
 bash run_full_reproduction.sh
 ```
 
-The full calculation includes numerical mode integrations and convergent multidimensional quadratures and is substantially more computationally intensive than the quick checks. Reference values are documented in `reproducibility/README.md` and in the supplied CSV/TXT audit outputs.
+The convergence campaign is documented by the frozen files `reproducibility/paper_I/conv_C.txt`, `conv_D.txt`, `convergence_results.txt` and `tail_y.npy`. See `reproducibility/MANIFEST.md` for the exact commands, quoted uncertainties and run times.
 
-The main quoted values are
-
-```text
-C_K       = 1.59555(2)e-4
-q_K       = 7.1800(1)e-4
-Delta_dyn = 7.0609(3)e-5
-Delta_IR  = -523/(498960 pi^2)
-Delta_K   = -3.5594(3)e-5
-```
-
-with
+The final Paper-I numerical values archived in v1.1.0 are
 
 ```text
-(C_rho, C_parallel, C_perp) = (5.9211, 13.018, 16.577)e-5
-(lambda_t, lambda_r, lambda_perp) = (2.6361, -1.1990, 3.3568)e-3
+C_dyn     = -2.626175(4)e-4
+C_K       =  1.595541(4)e-4
+Delta_dyn =  7.06092(2)e-5
+Delta_K   = -3.55936(2)e-5
 ```
 
-## Production versus diagnostic routines
+## Production versus legacy files
 
-`reproducibility/kasner_complete_rset.py` uses the regulator-free massless anisotropy integral from `kasner_rset_core.py`. Some finite-mass full-component routines retained in the core module are exploratory diagnostics and are **not** used to quote the final RSET. The production script uses the exact sixth-order coefficient `d7 = 4/2835` to control the leading ultraviolet tail and treats the subleading tail conservatively.
+Files explicitly marked as legacy in `reproducibility/MANIFEST.md` are retained only to document the v1.0.0 calculation. The revised production result for Paper I is generated by `reproducibility/paper_I/kasner_complete_rset.py`; it uses the convergence study and the direct ultraviolet tail fit that includes the `lambda^-11` contribution.
 
-## Reference outputs
+## Data availability and scope
 
-The CSV/TXT files in `reproducibility/` are frozen reference outputs associated with the calculations and are included to make numerical comparisons straightforward.
-
-## Related research outputs
-
-1. F. R. Villatoro, *Fate of a one-particle state approaching the Schwarzschild spacelike singularity* (2026). Bibliographic details will be updated when available.
-2. F. R. Villatoro, *Universal Quantum Kasner Fixed Point at the Schwarzschild Singularity* (2026), Zenodo v1, DOI `10.5281/zenodo.22011858`; all versions DOI `10.5281/zenodo.22011857`.
-
-When an arXiv identifier or final journal citation becomes available, the metadata can be updated without changing the archived scientific content of this release.
-
-## Citation and archive
-
-The archival citation for this software/reproducibility release should use the version-specific Zenodo DOI generated from the GitHub release. The repository metadata can later be updated with the complete citations of the related research articles.
+The Jiang--Jiang Schwarzschild coefficients are used only as external benchmarks. No manuscript source or PDF is stored in this repository. The two manuscripts are scientifically distinct but share this reproducibility archive.
 
 ## License
 
-The code and associated reproducibility files in this repository are released under the MIT License.
+The code and associated reproducibility files are released under the MIT License.
 
 ## Funding
 

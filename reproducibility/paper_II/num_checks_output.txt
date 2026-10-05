@@ -1,0 +1,9 @@
+=== Massless s wave: kappa |beta_H|^2 (Table 1, top) ===
+kappa=   2  kappa|beta|^2=0.306176  (published 0.306176)  |alpha|^2-|beta|^2-1=+9.9e-11
+kappa=   4  kappa|beta|^2=0.333939  (published 0.333939)  |alpha|^2-|beta|^2-1=+9.9e-11
+kappa=   8  kappa|beta|^2=0.356089  (published 0.356088)  |alpha|^2-|beta|^2-1=+9.9e-11
+kappa=  16  kappa|beta|^2=0.372997  (published 0.372996)  |alpha|^2-|beta|^2-1=+1.0e-10
+kappa=  32  kappa|beta|^2=0.385566  (published 0.385565)  |alpha|^2-|beta|^2-1=+1.0e-10
+kappa=  64  kappa|beta|^2=0.394755  (published 0.394754)  |alpha|^2-|beta|^2-1=+1.0e-10
+kappa= 128  kappa|beta|^2=0.401401  (published 0.401400)  |alpha|^2-|beta|^2-1=+1.0e-10
+Fixed angular towers: run_part1.py.  Packet convergence: run_part2.py.

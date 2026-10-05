@@ -1,0 +1,10 @@
+Q = -(8*r - 9)/(16*r**3*(r - 1))   Q - formula (2.4): 0
+H = -(4*r - 3)/(2*r**(3/2)*sqrt(1 - r))   zeros: [3/4]   Q(3/4) = -16/9
+Q = H_dot/2 + H^2/4 check: 0
+velocity map: |alpha_v|^2-|beta_v|^2 = 1
+W[u,u*] = (0.0 + 2.54647908947j)   (2/pi)(P Qbar - Pbar Q) = (0.0 + 2.54647908947j)   -> W=i requires 2 Im(Pbar Q) = -1.5707963
+WS integral = (-4.93877933863 + 4.93877934043j)  closed form (-4.93877934054 + 4.93877934054j)   D = 0.457133718071   A_s = 2D^2 = 0.417942472394
+Abel-regularized int z H0(2)^2 e^{-eps z} dz, eps=0.08,0.04,0.02,0.01 -> ['0.202211+0.009982i', '0.202534+0.004998i', '0.202615+0.002500i', '0.202636+0.001250i']   expected 2/pi^2 = 0.202642
+alpha_H = 0  (should be 0);  beta_H check: 0
+|alpha|^2-|beta|^2 = 1   |beta|^2 - [9/16 + ln^2 Lambda/(4pi^2)] = 0
+excitation coupling term, coefficient of b^2 ln y / y^2 in (delta Box - nabla nabla)F, components (y,X,Z,Z): [-2, -2/3, 4/3, 4/3]

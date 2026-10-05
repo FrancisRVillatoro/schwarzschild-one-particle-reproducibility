@@ -1,0 +1,11 @@
+(5.6): int S2 du - [1/(2v) - mu^4/(16 v^7)] = 0
+C_IR = 1/(32 pi^2) int x^2/(1+x^2)^(7/2) = 1/(240*pi**2)  (1/(240 pi^2) = 1/(240*pi**2) )
+J_mu - Eq.(A.5) = 0    J_0 = -1/(63*lambda**3)
+Delta_IR = -523/(498960*pi**2)  (-523/(498960 pi^2) = -523/(498960*pi**2) )
+massless scalar 4th-order angular average = 0
+6th-order tails: scalar -1/(2835*lambda**7)   weighted 4/(2835*lambda**7)
+B_2(u) = -5*u**4/16 + 5*u**2/24 - 1/144    C_4(u) = 1155*u**8/256 - 385*u**6/64 + 245*u**4/128 - 5*u**2/64 + 1/768
+Kasner (delta Box - nabla nabla) y^-2  * y^4 = [2, -10/3, -16/3, -16/3]
+Schwarzschild (delta Box - nabla nabla) r^-3 * r^6, r->0 = [9, -15, -24, -24]
+Kretschmann Kasner * y^4 = 64/27   anomaly coefficient K/(2880 pi^2) = 1/(1215*pi**2) = 1/(1215 pi^2)
+Kretschmann Schwarzschild (M=1) * r^6 = 48

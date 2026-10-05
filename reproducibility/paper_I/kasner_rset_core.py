@@ -1,4 +1,3 @@
-
 import numpy as np, math
 from scipy.integrate import solve_ivp
 from scipy.optimize import brentq

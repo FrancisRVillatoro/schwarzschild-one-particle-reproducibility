@@ -1,0 +1,15 @@
+2 sigma_4 = (A - 2*B)**2/108    2 sigma_6 = (A - 2*B)**2*(13*A - 2*B)/29160
+U_2 = 0    U_4 = (A**2 - A*B + B**2)/1215    V0_2 = -2*(A + B)/1215    V1(x,x) = 4/1215
+B2(u) = -5*u**4/16 + 5*u**2/24 - 1/144   Legendre: {0: 0, 2: -5/126, 4: -1/14, 6: 0, 8: 0, 10: 0}
+Phi^2: H finite part     = (-9*n**4 + 12*n**2 - 4)/(432*pi**2)
+Phi^2: adiabatic finite  = (-45*n**4 + 60*n**2 - 11)/(2160*pi**2)
+Phi^2: H - A (should be direction independent) = -1/(240*pi**2)  ; -1/(240 pi^2) = -1/(240*pi**2)
+V1(x,x) = 4/1215    V0_2(s=0) = -2*(a**2 + b**2 + c**2)/1215
+log coefficient in G_H (must vanish): 0
+C4(u) = 1155*u**8/256 - 385*u**6/64 + 245*u**4/128 - 5*u**2/64 + 1/768
+Legendre of (3u^2-1)C4/2: {0: 0, 2: 2/91, 4: 145/2002, 6: 20/187, 8: 70/741, 10: 315/8398}
+T anisotropic: H finite = -n**10/(8*pi**2) + 5*n**8/(12*pi**2) - 19*n**6/(36*pi**2) + 5*n**4/(16*pi**2) - n**2/(12*pi**2) + 11/(1620*pi**2)
+T anisotropic: A finite = -n**10/(8*pi**2) + 5*n**8/(12*pi**2) - 19*n**6/(36*pi**2) + 5*n**4/(16*pi**2) - n**2/(12*pi**2) + 191/(33264*pi**2)
+H - A (should be direction independent) = 523/(498960*pi**2)  ; +523/(498960 pi^2) = 523/(498960*pi**2)
+Delta^-2 terms equal: True
+Delta^-4 terms equal: True

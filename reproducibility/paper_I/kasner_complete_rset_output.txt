@@ -1,0 +1,13 @@
+Delta_dyn panels: ['7.2088723178e-06', '4.4834519062e-05', '1.7255756663e-05', '1.2386823205e-06'] (76s)
+tail beyond 16, fit d9,d11 on [8,16]: 7.145706e-08   coefficients {7: 0.00141, 9: 0.01812, 11: -0.38706}
+tail beyond 16, fit d9,d11,d13 on [8,16]: 7.151594e-08   coefficients {7: 0.00141, 9: 0.01929, 11: -0.63765, 13: 11.66318}
+tail beyond 16, fit d9,d11 on [10,16]: 7.149517e-08   coefficients {7: 0.00141, 9: 0.01873, 11: -0.46895}
+
+C_dyn = -2.6261751e-04 +/- 4.1e-10      C_K = 1.5955409e-04      q_K = 7.179934e-04
+Delta_dyn = 7.0609249e-05 +/- 7.0e-11   Delta_K = -3.5593611e-05
+minimal coupling: C_rho, C_par, C_perp = 5.921091e-05 1.301746e-04 1.657682e-04
+                  lambda_t, lambda_r, lambda_perp = 2.636036e-03 -1.199021e-03 3.356806e-03   Delta (4/81)(lt-lp) = -3.559361e-05
+conformal coupling: C = 6.0262e-06 4.1533e-05 2.3942e-05   lambda = 8.4105e-04 -1.2203e-04 4.8483e-04
+null-projection thresholds: xi_par = 0.22256  xi_perp = 0.19228  xi_rho = 0.18555
+trace check: -C_rho+C_par+2C_perp - (2C_K+A) = 0.0e+00;  conformal trace - A = 2.7e-20
+Jiang-Jiang comparison: (q-qJ)/qJ = 2.42e-04   Delta_J = -3.5244e-05   relative difference in Delta = 9.81e-03   (146s)

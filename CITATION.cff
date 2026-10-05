@@ -2,39 +2,40 @@ cff-version: 1.2.0
 message: "If you use this software or its numerical results, please cite the archived Zenodo release."
 title: "Schwarzschild one-particle and Kasner fixed-point reproducibility"
 type: software
-version: 1.0.0
-date-released: 2026-08-19
+version: 1.1.0
+date-released: 2026-10-05
 authors:
   - family-names: Villatoro
     given-names: Francisco R.
     affiliation: Universidad de Málaga
+    orcid: "https://orcid.org/0000-0003-4314-6213"
 license: MIT
+repository-code: "https://github.com/FrancisRVillatoro/schwarzschild-one-particle-reproducibility"
 abstract: >-
-  Numerical and symbolic reproducibility package supporting calculations associated
-  with "Fate of a one-particle state approaching the Schwarzschild spacelike singularity"
-  and overlapping Kasner fixed-point results reported in
-  "Universal Quantum Kasner Fixed Point at the Schwarzschild Singularity".
+  Numerical and symbolic reproducibility package supporting two related studies
+  of quantum fields near the Schwarzschild spacelike singularity: the universal
+  Kasner scaling limit of Hadamard states and the particle-number, terminal-state,
+  and one-particle-stress analysis.
 keywords:
   - Schwarzschild black hole
   - black-hole interior
   - quantum field theory in curved spacetime
-  - semiclassical gravity
   - Kasner spacetime
+  - Hadamard states
   - renormalized stress-energy tensor
   - adiabatic renormalization
   - Bogoliubov transformations
   - reproducible research
 references:
   - type: article
-    title: "Fate of a one-particle state approaching the Schwarzschild spacelike singularity"
+    title: "A universal Kasner scaling limit for Hadamard states in the Schwarzschild interior"
     authors:
       - family-names: Villatoro
         given-names: Francisco R.
     year: 2026
   - type: article
-    title: "Universal Quantum Kasner Fixed Point at the Schwarzschild Singularity"
+    title: "Particle number, terminal states and local stress near the Schwarzschild singularity"
     authors:
       - family-names: Villatoro
         given-names: Francisco R.
     year: 2026
-    doi: 10.5281/zenodo.22011858

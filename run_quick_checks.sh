@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-cd "$ROOT/reproducibility"
 
-echo "[1/3] Symbolic RSET audit"
-python check_kasner_rset_symbolics.py
+echo "[1/3] Paper I: adiabatic symbolic audit"
+(cd "$ROOT/reproducibility/paper_I" && python kasner_adiabatic_symbolics.py)
 
-echo "[2/3] Analytic UV-tail audit"
-python check_kasner_uv_tails.py
+echo "[2/3] Paper I: equal-time point splitting"
+(cd "$ROOT/reproducibility/paper_I" && python kasner_point_splitting.py)
 
-echo "[3/3] Endpoint-Hankel channel audit"
-python reproduce_channel_C.py
+echo "[3/3] Paper II: symbolic audit"
+(cd "$ROOT/reproducibility/paper_II" && python paper2_symbolic_checks.py)
 
 echo "Quick checks completed."
