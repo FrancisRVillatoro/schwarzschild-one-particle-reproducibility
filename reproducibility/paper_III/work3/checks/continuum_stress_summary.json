@@ -1,0 +1,96 @@
+{
+  "CAR": {
+    "particle_rank_one_error": 1.7396354570536164e-15,
+    "antiparticle_rank_one_error": 4.364787455868507e-15,
+    "particle_state_norm": 1.0,
+    "antiparticle_state_norm": 0.9999999999999998
+  },
+  "bilinear": {
+    "local_tensor_relative_error": 1.86649920260891e-15,
+    "spin_shear_matrix_error": 2.2737367544323206e-13,
+    "random_packets": 12,
+    "on_shell_trace_relative_error": 4.754048791086649e-16
+  },
+  "continuum": {
+    "description": "Continuous terminal/Cauchy diagnostic, not an Unruh transmission calculation.",
+    "quadrature_points": 96,
+    "max_norm_error": 4.054978575140922e-12,
+    "rho_leading_coefficient": 0.008262331384300105,
+    "T12_leading_coefficient": -0.004655062872636132,
+    "mass_scale_relative_error": 4.967253168226349e-16,
+    "rows": [
+      {
+        "r": 0.01,
+        "R": 0.03,
+        "scaled_rho": 0.007905995212023988,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.004645819721574679,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 0.99999999999983
+      },
+      {
+        "r": 0.003,
+        "R": 0.009000000000000001,
+        "scaled_rho": 0.008200327378759602,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.004657917023095707,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 1.000000000004055
+      },
+      {
+        "r": 0.001,
+        "R": 0.003,
+        "scaled_rho": 0.008250105431798648,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.004656440414409418,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 1.000000000000552
+      },
+      {
+        "r": 0.0003,
+        "R": 0.0009,
+        "scaled_rho": 0.008260295360490144,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.004655514194825612,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 1.0000000000000253
+      },
+      {
+        "r": 0.0001,
+        "R": 0.00030000000000000003,
+        "scaled_rho": 0.008261937037155413,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.004655216551486902,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 1.0000000000000002
+      },
+      {
+        "r": 3e-05,
+        "R": 9e-05,
+        "scaled_rho": 0.008262266339902584,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.004655109294001725,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 1.0
+      },
+      {
+        "r": 1e-05,
+        "R": 3.0000000000000004e-05,
+        "scaled_rho": 0.008262318842710316,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.004655078375425764,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 1.0
+      },
+      {
+        "r": 1e-06,
+        "R": 3e-06,
+        "scaled_rho": 0.008262330987007167,
+        "rho_limit": 0.008262331384300105,
+        "scaled_shear": -0.00465506442418548,
+        "shear_limit": -0.004655062872636132,
+        "interior_norm": 1.0
+      }
+    ]
+  }
+}

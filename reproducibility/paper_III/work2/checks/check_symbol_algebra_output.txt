@@ -1,0 +1,26 @@
+PASS 01: principal unit vector
+PASS 02: physical order-zero transport: n0_prime + 2 d cross n1
+PASS 03: physical order-one transport: n1_prime + 2 d cross n2
+PASS 04: projection constraint at order -1
+PASS 05: projection constraint at order -2
+PASS 06: Euler homogeneity of n0 (degree 0)
+PASS 07: Euler homogeneity of n1 (degree -1)
+PASS 08: Euler homogeneity of n2 (degree -2)
+PASS 09: Clifford involution 1
+PASS 10: Clifford involution 2
+PASS 11: Clifford involution 3
+PASS 12: Clifford anticommutator 1,2
+PASS 13: Clifford anticommutator 1,3
+PASS 14: Clifford anticommutator 2,3
+PASS 15: explicit physical first homogeneous coefficient
+PASS 16: first formal transport in four-component representation
+PASS 17: first coefficient is tangent to the projection manifold
+PASS 18: transverse-axis derivative is y Gamma_1/(2R)
+PASS 19: first coefficient vanishes on the transverse axis
+PASS 20: first coefficient vanishes on the longitudinal axis
+PASS 21: sign of the conjugated residual identity
+PASS bookkeeping: 315 (N,p,|alpha|) cases and 1575 derivative allocations
+Exact algebraic identities checked: 21
+ALL CHECKS PASSED
+Scope: algebra and exponent bookkeeping only; the all-order proof is in the manuscript.
+Python: 3.13.5 SymPy: 1.14.0

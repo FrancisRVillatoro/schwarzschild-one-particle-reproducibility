@@ -1,0 +1,113 @@
+{
+  "global_pure_projection_exact": {
+    "pass": true
+  },
+  "isometric_embedding": {
+    "pass": true
+  },
+  "global_perturbations_are_projections": {
+    "pass": true
+  },
+  "orthogonality_particle_antiparticle": {
+    "pass": true
+  },
+  "restricted_covariance_exact": {
+    "pass": true
+  },
+  "purity_defect_factorization": {
+    "pass": true
+  },
+  "purity_defect_nonzero": {
+    "pass": true
+  },
+  "particle_covariance_compression": {
+    "pass": true
+  },
+  "antiparticle_covariance_compression": {
+    "pass": true
+  },
+  "particle_excited_local_mixed": {
+    "pass": true
+  },
+  "antiparticle_excited_local_mixed": {
+    "pass": true
+  },
+  "local_fermion_covariance_bounds": {
+    "pass": true
+  },
+  "restriction_fraction": {
+    "pass": true
+  },
+  "CAR_0_0": {
+    "pass": true
+  },
+  "CAR_0_1": {
+    "pass": true
+  },
+  "CAR_0_2": {
+    "pass": true
+  },
+  "CAR_0_3": {
+    "pass": true
+  },
+  "CAR_1_0": {
+    "pass": true
+  },
+  "CAR_1_1": {
+    "pass": true
+  },
+  "CAR_1_2": {
+    "pass": true
+  },
+  "CAR_1_3": {
+    "pass": true
+  },
+  "CAR_2_0": {
+    "pass": true
+  },
+  "CAR_2_1": {
+    "pass": true
+  },
+  "CAR_2_2": {
+    "pass": true
+  },
+  "CAR_2_3": {
+    "pass": true
+  },
+  "CAR_3_0": {
+    "pass": true
+  },
+  "CAR_3_1": {
+    "pass": true
+  },
+  "CAR_3_2": {
+    "pass": true
+  },
+  "CAR_3_3": {
+    "pass": true
+  },
+  "vacuum_norm": {
+    "pass": true
+  },
+  "particle_norm": {
+    "pass": true
+  },
+  "antiparticle_norm": {
+    "pass": true
+  },
+  "Fock_vacuum_CAR_particle_covariance": {
+    "pass": true
+  },
+  "Fock_excited_particle_subtracts_rank_one": {
+    "pass": true
+  },
+  "Fock_excited_antiparticle_adds_rank_one": {
+    "pass": true
+  },
+  "sqrt_HS_ideal_identity_noncommuting": {
+    "pass": true,
+    "value": "3.236828524569469e-16"
+  },
+  "total_checks": 36,
+  "all_pass": true
+}

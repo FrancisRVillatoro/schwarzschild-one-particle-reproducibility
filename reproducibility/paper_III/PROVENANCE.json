@@ -1,0 +1,72 @@
+{
+  "created": "2026-10-13",
+  "provenance": "Work1-Work8 bundles submitted in the conversation",
+  "base_github_release": "v1.1.0",
+  "base_commit": "0a4c51b1de25a12f21220cdaa2a7794e32ee4943",
+  "third_paper_status": "release candidate; unpublished",
+  "quantitative_artifacts": "recorded outputs from earlier Work1-Work8, not independently recreated in this repackaging unless listed as rerun in QA",
+  "source_files": {
+    "work1": [
+      "check_time_orientation.py",
+      "Work1_checks.json",
+      "Work1_checks.txt"
+    ],
+    "work2": [
+      "checks/check_symbol_algebra.py",
+      "checks/check_symbol_algebra_output.txt"
+    ],
+    "work3": [
+      "checks/run_checks.py",
+      "checks/spin_geometry.py",
+      "checks/check_continuum_refinements.py",
+      "checks/check_continuum_stress.py",
+      "checks/check_invariant_harmonics.py",
+      "checks/check_work3_symbolics.py",
+      "checks/continuum_packet_results.csv",
+      "checks/continuum_refinements.csv",
+      "checks/continuum_stress_summary.json",
+      "checks/invariant_harmonics_results.csv",
+      "checks/invariant_harmonics_summary.json",
+      "checks/work3_symbolic_results.json"
+    ],
+    "work4": [
+      "checks/check_work4.py",
+      "checks/spin_geometry.py",
+      "checks/work3_stress_core.py",
+      "checks/work4_results.json",
+      "checks/box_limit.csv",
+      "checks/continuum_charges.csv",
+      "checks/terminal_bounds.csv",
+      "checks/ward_identity_refinement.csv"
+    ],
+    "work5": [
+      "checks/universal_precision.py",
+      "checks/F_refinements.py",
+      "checks/convergence_CF.py",
+      "checks/CF_tail_refinement.py",
+      "checks/F_refinements.csv",
+      "checks/F_refinements.json",
+      "checks/CF_quadrature_convergence.csv",
+      "checks/CF_quadrature_summary.json",
+      "checks/CF_cutoff_convergence.csv",
+      "checks/CF_cutoff_summary.json"
+    ],
+    "work6": [
+      "checks/universal_precision.py",
+      "checks/window_CF.py",
+      "checks/check_hs_counting.py",
+      "checks/window_integrals.csv",
+      "checks/toy_HS_counting.csv",
+      "checks/counting_validation.json"
+    ],
+    "work7": [
+      "checks_work7.py",
+      "checks_work7_output.txt",
+      "massive_operator_diagnostics.json"
+    ],
+    "work8": [
+      "checks/check_priority4.py",
+      "results/priority4_exact_CAR_checks.json"
+    ]
+  }
+}

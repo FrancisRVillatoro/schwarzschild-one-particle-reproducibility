@@ -1,0 +1,95 @@
+{
+  "CAR_restriction": {
+    "description": "Finite CAR restriction; not a black-hole scattering model.",
+    "rank_one_error": 2.482534153247273e-16,
+    "interior_norm": 0.5380000000000001,
+    "restricted_covariance_eigenvalues": [
+      0.25,
+      0.7000000000000001
+    ],
+    "particle_covariance_eigenvalues": [
+      -5.551115123125783e-17,
+      0.41200000000000003
+    ],
+    "antiparticle_covariance_eigenvalues": [
+      0.475,
+      1.0
+    ],
+    "unjustified_renormalization_min_eigenvalue": -0.4134633964853341
+  },
+  "CAR_particle_antiparticle": {
+    "particle_rank_one_error": 1.7396354570536164e-15,
+    "antiparticle_rank_one_error": 4.364787455868507e-15,
+    "particle_state_norm": 1.0,
+    "antiparticle_state_norm": 0.9999999999999998
+  },
+  "local_tensor_random": {
+    "local_tensor_relative_error": 1.86649920260891e-15,
+    "spin_shear_matrix_error": 2.2737367544323206e-13,
+    "random_packets": 12,
+    "on_shell_trace_relative_error": 4.754048791086649e-16
+  },
+  "max_trace_absolute_error": 1.5243882545146192e-16,
+  "physical_scale_relative_error": 4.694123670879361e-16,
+  "ward_rows": [
+    {
+      "mu": 0.0,
+      "h": 0.008,
+      "stress_relative_residual": 7.052664172820152e-08,
+      "current_relative_residual": 3.0470451522745506e-08
+    },
+    {
+      "mu": 0.0,
+      "h": 0.004,
+      "stress_relative_residual": 4.396756820890608e-09,
+      "current_relative_residual": 1.889831330500376e-09
+    },
+    {
+      "mu": 0.0,
+      "h": 0.002,
+      "stress_relative_residual": 2.6558329160649854e-10,
+      "current_relative_residual": 1.0410200358532953e-10
+    },
+    {
+      "mu": 0.0,
+      "h": 0.001,
+      "stress_relative_residual": 8.847620120337101e-12,
+      "current_relative_residual": 7.432671370153231e-12
+    },
+    {
+      "mu": 0.35,
+      "h": 0.008,
+      "stress_relative_residual": 7.054527154284328e-08,
+      "current_relative_residual": 3.050164618888822e-08
+    },
+    {
+      "mu": 0.35,
+      "h": 0.004,
+      "stress_relative_residual": 4.4151384899210065e-09,
+      "current_relative_residual": 1.9203546738570016e-09
+    },
+    {
+      "mu": 0.35,
+      "h": 0.002,
+      "stress_relative_residual": 2.83985547297425e-10,
+      "current_relative_residual": 1.3458758644196083e-10
+    },
+    {
+      "mu": 0.35,
+      "h": 0.001,
+      "stress_relative_residual": 2.584721373265417e-11,
+      "current_relative_residual": 2.3127574155946497e-11
+    }
+  ],
+  "charge_max_error_Tmax90": 2.672188026409117e-10,
+  "number_max_error_Tmax90": 1.3360856865318738e-10,
+  "max_terminal_error_to_bound": 0.09534314146039594,
+  "final_box_norm": 1.000000000125807,
+  "elapsed_seconds": 0.5220510959625244,
+  "environment": {
+    "Python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "NumPy": "2.3.5",
+    "SciPy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+  }
+}

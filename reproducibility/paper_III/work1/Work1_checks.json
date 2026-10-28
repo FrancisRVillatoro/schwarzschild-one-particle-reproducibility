@@ -1,0 +1,181 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "symbolic": {
+    "H_squared": true,
+    "lambda_flip_mass_fixed": true,
+    "k_flip_mass_fixed": true,
+    "Gamma1_also_flips_mass": true,
+    "chirality_commutes_massless_H": true,
+    "chirality_anticommutes_beta": true,
+    "physical_first_superadiabatic_correction": true,
+    "physical_first_order_transport": true,
+    "J_commutes_sigma_1": true,
+    "J_commutes_sigma_2": true,
+    "spin_connection_sigma": true,
+    "spin_connection_t": true,
+    "spin_connection_theta": true,
+    "spin_connection_phi": true,
+    "contracted_spin_connection": true,
+    "T00_local_bilinear": true,
+    "T11_local_bilinear": true,
+    "T01_local_bilinear": true,
+    "T01_transverse_anticommutator": true,
+    "T01_mass_anticommutator": true,
+    "T01_transverse_term_not_zero": true
+  },
+  "mode_tests": [
+    {
+      "k": 5,
+      "lambda": 2,
+      "mass": 0,
+      "physical_occupations": [
+        0.008097430097053198,
+        0.0080974300970532
+      ],
+      "auxiliary_occupations": [
+        0.008097430097053198,
+        0.0080974300970532
+      ],
+      "max_occupation_change": 0.0,
+      "conjugate_propagator_error": 0.0,
+      "unitarity_error": 4.649170139690676e-12,
+      "typed_Bogoliubov_identity_error": 3.274125370467654e-12
+    },
+    {
+      "k": 30,
+      "lambda": 3,
+      "mass": 0,
+      "physical_occupations": [
+        0.009923430776794263,
+        0.009923430776794251
+      ],
+      "auxiliary_occupations": [
+        0.009923430776794263,
+        0.009923430776794251
+      ],
+      "max_occupation_change": 0.0,
+      "conjugate_propagator_error": 0.0,
+      "unitarity_error": 4.2517989343370144e-11,
+      "typed_Bogoliubov_identity_error": 2.991519096863753e-11
+    },
+    {
+      "k": 5,
+      "lambda": 2,
+      "mass": 1,
+      "physical_occupations": [
+        0.007807720269071405,
+        0.0078077202690714125
+      ],
+      "auxiliary_occupations": [
+        0.007807720269071405,
+        0.0078077202690714125
+      ],
+      "max_occupation_change": 0.0,
+      "conjugate_propagator_error": 0.0,
+      "unitarity_error": 5.265671584405551e-12,
+      "typed_Bogoliubov_identity_error": 3.70751381673387e-12
+    },
+    {
+      "k": 100,
+      "lambda": 1,
+      "mass": 0,
+      "physical_occupations": [
+        0.29080460127079977,
+        0.2908046012708
+      ],
+      "auxiliary_occupations": [
+        0.29080460127079977,
+        0.2908046012708
+      ],
+      "max_occupation_change": 0.0,
+      "conjugate_propagator_error": 0.0,
+      "unitarity_error": 8.401035464597924e-11,
+      "typed_Bogoliubov_identity_error": 5.002652416133753e-11
+    },
+    {
+      "k": -5,
+      "lambda": 2,
+      "mass": 1,
+      "physical_occupations": [
+        0.007807720269071407,
+        0.00780772026907139
+      ],
+      "auxiliary_occupations": [
+        0.007807720269071407,
+        0.00780772026907139
+      ],
+      "max_occupation_change": 0.0,
+      "conjugate_propagator_error": 0.0,
+      "unitarity_error": 5.265671584405551e-12,
+      "typed_Bogoliubov_identity_error": 3.70750995662427e-12
+    },
+    {
+      "k": 5,
+      "lambda": -2,
+      "mass": 1,
+      "physical_occupations": [
+        0.007807720269071407,
+        0.00780772026907139
+      ],
+      "auxiliary_occupations": [
+        0.007807720269071407,
+        0.00780772026907139
+      ],
+      "max_occupation_change": 0.0,
+      "conjugate_propagator_error": 0.0,
+      "unitarity_error": 5.265671584405551e-12,
+      "typed_Bogoliubov_identity_error": 3.70750995662427e-12
+    }
+  ],
+  "universal_tests": [
+    {
+      "Lambda": 0.1,
+      "rho_start": 25.0,
+      "physical_probability": 0.37847357603966947,
+      "auxiliary_probability": 0.37847357603966947,
+      "J_mapping_error": 0.0
+    },
+    {
+      "Lambda": 0.5,
+      "rho_start": 25.0,
+      "physical_probability": 0.1485631124800075,
+      "auxiliary_probability": 0.1485631124800075,
+      "J_mapping_error": 0.0
+    },
+    {
+      "Lambda": 1.0,
+      "rho_start": 25.0,
+      "physical_probability": 0.03729164383564673,
+      "auxiliary_probability": 0.03729164383564673,
+      "J_mapping_error": 0.0
+    }
+  ],
+  "static_calibration": {
+    "positive_particle_energy": 1.1575836902790224,
+    "expected_omega": 1.1575836902790224,
+    "negative_mode_classical_energy": -1.1575836902790222,
+    "antiparticle_energy": 1.1575836902790222,
+    "two_point_equation_error": 0.0,
+    "positive_projection_error": 1.7591750296635414e-16
+  },
+  "CAR_particle_covariance_error": 4.534183160459213e-16,
+  "CAR_antiparticle_covariance_error": 1.3323004478353567e-15,
+  "random_local_stress_absolute_error": 2.2737367544323206e-13,
+  "T01_counterexample": {
+    "k": 0,
+    "lambda": 1,
+    "mass": 0,
+    "r": 0.1,
+    "s_Theta": 1.0,
+    "d_Theta": 0.8660254037844386,
+    "rho": 333.3333333333332,
+    "T01": -144.33756729740637,
+    "T11": 0.0
+  },
+  "status": "all_implemented_checks_passed"
+}

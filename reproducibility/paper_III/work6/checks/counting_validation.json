@@ -1,0 +1,29 @@
+{
+  "I_full_toy": 0.277680183634898,
+  "I_full_toy_closed": 0.2776801836348979,
+  "I_window_toy": 0.12233088983347154,
+  "rows": [
+    {
+      "K": 100,
+      "normalized_window": 0.12221011301780983,
+      "expected_window": 0.10383768431907776,
+      "normalized_full": 0.23203282464873842,
+      "expected_full": 0.23570226039551595
+    },
+    {
+      "K": 1000,
+      "normalized_window": 0.10126872646270252,
+      "expected_window": 0.10383768431907776,
+      "normalized_full": 0.23420060856968306,
+      "expected_full": 0.23570226039551595
+    },
+    {
+      "K": 10000,
+      "normalized_window": 0.10381959198172601,
+      "expected_window": 0.10383768431907776,
+      "normalized_full": 0.235189394442911,
+      "expected_full": 0.23570226039551595
+    }
+  ],
+  "note": "Toy benchmark validates count of both k signs, Dirac two polarizations and 2lambda angular multiplicity. Does not certify physical transition F."
+}

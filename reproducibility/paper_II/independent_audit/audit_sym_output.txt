@@ -1,0 +1,49 @@
+== (1) geometry, 2M=1
+d sigma/dr - 1/sqrt(f) = 0
+sigma series: 2*r**(3/2)/3 + r**(5/2)/5 + 3*r**(7/2)/28 + O(r**4)
+q = r**(3/2)*sqrt(1 - r)  series: r**(3/2) - r**(5/2)/2 + O(r**3)
+H = (3 - 4*r)/(2*r**(3/2)*sqrt(1 - r))   claimed (3-4r)/(2 r^{3/2} sqrt(1-r)): 0
+Q - claimed = 0
+Q - (H'/2 + H^2/4) = 0
+Q*sigma^2 series: -1/4 - 8*r/45 + O(r**2)
+
+== (2) Cortez rescaling, l=0
+s_0 = (1 - r)/r**4  claimed (1-r)/r^4: 0
+eta-tilde(l=0) = -r - log(r - 1) + I*pi  series: r**2/2 + r**3/3 + r**4/4 + r**5/5 + O(r**6)
+V_1 (l=0) series in r: 1/(3*r**3) - 1/(3*r**2) - 2/(135*r) - 7/1620 + O(r)
+r(eta) = sqrt(2)*eta**(5/2)/1080 + sqrt(2)*eta**(3/2)/18 + sqrt(2)*sqrt(eta) + 2*eta**2/135 - 2*eta/3
+V_1 as series in eta-tilde: sqrt(2)/(12*eta**(3/2)) - 23*sqrt(2)/(1080*sqrt(eta)) - 31/1620 - 23*sqrt(2)*sqrt(eta)/6048 + O(eta)
+claimed coefficients: 1/(6 sqrt2) = sqrt(2)/12 = 0.11785113019775792 ; -23/(540 sqrt2) = -0.030117511050538136
+r=1e-2: V1=329998.514183, lead=330002.778383, lead+sec=329998.533357, resid/(1)=-0.0191739
+r=1e-3: V1=332999985.181, lead=333000027.778, lead+sec=332999985.2, resid/(1)=-0.0191396
+r=1e-4: V1=333299999852.0, lead=333300000278.0, lead+sec=333299999852.0, resid/(1)=-0.0191363
+
+== (2b) l>=1 rescaling
+s_lhat series: 1/(16*lhat**2*r) + 5/(16*lhat**2) + O(r)
+claimed (16 lhat^2 r)^{-1}[1+5r]: coefficient check -> 1 + 5*r + O(r**2)
+eta-tilde (l>=1) series: sqrt(r)*(lhat**2*(126*r**2 + 280*r + 1680)/840 + r**3*(120 - 45*lhat**2)/840)/lhat  = 2 lhat sqrt(r)[1 + r/6 + ...]? 1 + r/6 + O(r**2)
+V_1 (l>=1) series: (1 + O(r))/(3*lhat**2)
+claimed 1/(3 lhat^2) -> 0
+
+== (3) lambda: b' = lambda b with d/dtau_h = q d/dsigma = q sqrt(f) d/dr = w d/dr
+l=0  b'/b = 2 + O(r)
+l>=1  b'/b = 1/2 + O(r)
+
+== (4) geodesics with M restored
+sigma_E = sqrt(2)*r**(3/2)*(1120*M**2 + 168*M*r*(1 - E**2) + 45*r**2*(E**2 - 1)**2)/(3360*M**(5/2))
+claimed 2 r^{3/2}/(3 sqrt(2M)) [1 - 3(E^2-1) r/(20M)]: ratio series -> 1 + r*(-3*E**2/(20*M) + 3/(20*M)) + O(r**2)
+t(r)-t_* = sqrt(2)*E*r**(5/2)*(2016*M**2 + 360*M*r*(3 - E**2) + r**2*(-140*E**2 + 105*(E**2 - 1)**2 + 420))/(20160*M**(7/2))   leading coefficient: sqrt(2)*E/(10*M**(3/2))   claimed 2E/(5 (2M)^{3/2}) -> 0
+sigma_E^2 leading = 2 r^3/(9M)? 1
+v_E = -E (2M/r - 1 + E^2)^{-1/2} ~ -E (r/2M)^{1/2}: 1 + r*(-E**2/(4*M) + 1/(4*M)) + O(r**2)
+
+== (5) Frobenius: d = -l(l+1) b/(2M)
+order r^0, log r coefficient: 2*M*d + b*l**2 + b*l -> d = [b*l*(-l - 1)/(2*M)]
+order r^0, constant: 2*M*c + 4*M*d + a*l**2 + a*l - b + d*l**2*r*log(r) + d*l*r*log(r) - 2*d*r*log(r) -> c = [(-4*M*d - a*l**2 - a*l + b - d*l**2*r*log(r) - d*l*r*log(r) + 2*d*r*log(r))/(2*M)]
+
+== (6) counts
+Parker prefactor: |B|^2/(2 omega sigma)  [ (3/2)|B|^2 / (2*(3/2)sigma*omega) ] ok
+velocity prefactor: (1/2)*(3/2)^2 = 9/8
+n_ref prefactor: B**2*lambda**2/(12*b*kappa)  claimed lambda^2 B^2/(12 kappa b)
+
+== (7) improvement term on Kasner: Phi^2 = C ln^2 sigma, volume ~ sigma
+rho_imp/xi = 2*C*log(sigma)/sigma**2   claimed 2C ln(sigma)/sigma^2

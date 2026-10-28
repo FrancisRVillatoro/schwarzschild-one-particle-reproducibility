@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.2.0 — 2026-10-28
+
+- Aligned Paper II metadata with its Annals of Physics submitted TEX and updated its MANIFEST cross-references.
+- Added `reproducibility/paper_II/independent_audit/`: independent symbolic and numerical audit scripts, author-supplied outputs, SHA checks, and quick regression test.
+- Preserved the Paper-I and Paper-II production scripts from v1.1.0 without changes.
+
+- Added `reproducibility/paper_III` for the Weyl/Dirac study.
+- Included exact algebraic CAR, spin-harmonic and symbol checks, plus massive-mode and stress tests.
+- Added reproducible `F(Lambda)` refinement CSVs that show nonmonotonicity, and `C_F` cutoff/quadrature studies.
+- Kept full model `C_F` distinct from exact Schwarzschild fixed-window Hilbert--Schmidt bounds.
+- Added fast and full Paper-III runners and independent provenance/hash manifests.
+- Preserved all v1.1.0 Paper-I/Paper-II production scripts and reference results.
+
 ## v1.1.0 — 2026-10-05
 
 - Reorganized reproducibility material into separate `paper_I` and `paper_II` trees.
