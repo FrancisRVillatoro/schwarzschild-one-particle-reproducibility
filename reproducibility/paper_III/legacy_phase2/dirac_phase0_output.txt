@@ -1,0 +1,49 @@
+=== (1)-(2) convergence at the singularity, k=5, kappa=2, m=0, start r0=0.9 ===
+  r=   5e-01  norm-1=-1.9e-12  |chi(r)-chi(end)|=2.703e+00  ratio to r^1/2=3.822  Parker n=0.004330  endpoint beta^2=0.208969
+  r=   2e-01  norm-1=+2.5e-11  |chi(r)-chi(end)|=2.264e+00  ratio to r^1/2=5.063  Parker n=0.022591  endpoint beta^2=0.034228
+  r=   1e-01  norm-1=+1.5e-12  |chi(r)-chi(end)|=1.697e+00  ratio to r^1/2=5.366  Parker n=0.015640  endpoint beta^2=0.010626
+  r=   3e-02  norm-1=-5.9e-12  |chi(r)-chi(end)|=9.645e-01  ratio to r^1/2=5.568  Parker n=0.009097  endpoint beta^2=0.007910
+  r=   1e-02  norm-1=-5.8e-12  |chi(r)-chi(end)|=5.623e-01  ratio to r^1/2=5.623  Parker n=0.008216  endpoint beta^2=0.008060
+  r=   1e-03  norm-1=-6.0e-12  |chi(r)-chi(end)|=1.782e-01  ratio to r^1/2=5.636  Parker n=0.008098  endpoint beta^2=0.008097
+  r=   1e-04  norm-1=-6.1e-12  |chi(r)-chi(end)|=5.600e-02  ratio to r^1/2=5.600  Parker n=0.008097  endpoint beta^2=0.008097
+  r=   1e-05  norm-1=-6.2e-12  |chi(r)-chi(end)|=1.732e-02  ratio to r^1/2=5.478  Parker n=0.008097  endpoint beta^2=0.008097
+  r=   1e-06  norm-1=-6.2e-12  |chi(r)-chi(end)|=5.091e-03  ratio to r^1/2=5.091  Parker n=0.008097  endpoint beta^2=0.008097
+  r=   1e-07  norm-1=-6.2e-12  |chi(r)-chi(end)|=1.223e-03  ratio to r^1/2=3.868  Parker n=0.008097  endpoint beta^2=0.008097
+  r=   1e-08  norm-1=-6.2e-12  |chi(r)-chi(end)|=0.000e+00  ratio to r^1/2=0.000  Parker n=0.008097  endpoint beta^2=0.008097
+
+=== (3) endpoint Bogoliubov block vs (k, kappa): |beta|^2 = tr(P_+(r0) U^+ P_-^perp U P_+(r0)) / 2 ===
+k=    3  0.0951  0.0028  0.0005  0.0005  0.0005  0.0003  0.0001  0.0000  0.0000  0.0000
+k=   10  0.1629  0.0216  0.0006  0.0000  0.0000  0.0000  0.0001  0.0000  0.0000  0.0000
+k=   30  0.2280  0.0653  0.0099  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+k=  100  0.2908  0.1335  0.0458  0.0015  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+k=  300  0.3378  0.2004  0.1022  0.0150  0.0001  0.0000  0.0000  0.0000  0.0000  0.0000
+k= 1000  0.3785  0.2675  0.1752  0.0575  0.0044  0.0000  0.0000  0.0000  0.0000  0.0000
+kappa:             1       2       3       5       8      12      20      30      50      80
+
+scaling variable x = kappa / k^{1/4} and |beta|^2:
+  x= 0.178  |beta|^2=0.3785   (k=1000, kappa=1)
+  x= 0.240  |beta|^2=0.3378   (k=300, kappa=1)
+  x= 0.316  |beta|^2=0.2908   (k=100, kappa=1)
+  x= 0.356  |beta|^2=0.2675   (k=1000, kappa=2)
+  x= 0.427  |beta|^2=0.2280   (k=30, kappa=1)
+  x= 0.481  |beta|^2=0.2004   (k=300, kappa=2)
+  x= 0.533  |beta|^2=0.1752   (k=1000, kappa=3)
+  x= 0.562  |beta|^2=0.1629   (k=10, kappa=1)
+  x= 0.632  |beta|^2=0.1335   (k=100, kappa=2)
+  x= 0.721  |beta|^2=0.1022   (k=300, kappa=3)
+  x= 0.760  |beta|^2=0.0951   (k=3, kappa=1)
+  x= 0.855  |beta|^2=0.0653   (k=30, kappa=2)
+  x= 0.889  |beta|^2=0.0575   (k=1000, kappa=5)
+  x= 0.949  |beta|^2=0.0458   (k=100, kappa=3)
+  x= 1.125  |beta|^2=0.0216   (k=10, kappa=2)
+  x= 1.201  |beta|^2=0.0150   (k=300, kappa=5)
+  x= 1.282  |beta|^2=0.0099   (k=30, kappa=3)
+  x= 1.423  |beta|^2=0.0044   (k=1000, kappa=8)
+  x= 1.520  |beta|^2=0.0028   (k=3, kappa=2)
+  x= 1.581  |beta|^2=0.0015   (k=100, kappa=5)
+
+sensitivity to the starting slice r0 (k=100, kappa=3):
+  r0=0.6: |beta|^2=0.0459
+  r0=0.9: |beta|^2=0.0458
+  r0=0.99: |beta|^2=0.0458
+massive case m=1 (k=30, kappa=3): |beta|^2=0.0099  (massless 0.0099)

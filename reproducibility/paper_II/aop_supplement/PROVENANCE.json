@@ -1,0 +1,13 @@
+{
+  "status": "candidate_unpublished",
+  "author_supplied_paper_II_title": "Particle creation, terminal states and local stress of a scalar field in the Schwarzschild interior",
+  "production_base": "v1.1.0",
+  "base_commit": "0a4c51b1de25a12f21220cdaa2a7794e32ee4943",
+  "source_bundle": "Paper_II_AoP_supplementary_code.zip",
+  "source_sha256": {
+    "check_AoP_revision.py": "705fd6185a185494d03a2c77151c1adff6576596de1e532cfda218b7dd2a9179",
+    "check_scalar_Ward.py": "17b865ac1549823260d6a3250f59954e963525835777ca5af191472f6568511f"
+  },
+  "integration_change": "check_AoP_revision.py: replace BASE/'archived_v110/num_checks.py' by BASE.parent/'num_checks.py'; no scientific changes",
+  "table_export": "new deterministic row selector; reads refined outputs, does not integrate"
+}

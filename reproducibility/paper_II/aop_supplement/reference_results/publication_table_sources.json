@@ -1,0 +1,26 @@
+{
+  "Table_1_top": {
+    "source": "swave_refinement.csv",
+    "rmin": 1e-14,
+    "rtol": 2e-13,
+    "atol": 2e-15
+  },
+  "Table_1_bottom": {
+    "source": "../run_part1.py",
+    "independent_check": "../independent_audit/audit_num.py",
+    "unchanged_production": true
+  },
+  "Table_2": {
+    "source": "normalized_packet.csv",
+    "N_omega": 96,
+    "rtol": 2e-13,
+    "atol": 2e-15,
+    "Z": 2.5086142772483844,
+    "scope": "Normalized horizon-flux diagnostic, not exterior Unruh scattering"
+  },
+  "source_sha256": {
+    "swave_refinement.csv": "dabf62f224c3faca8bd5dc7ed9343ddf2485a9eaab75cec2257ed3ab3a24c7a8",
+    "normalized_packet.csv": "c86a5944eb11690cee0553077a5a331edd4bd4c2251226efb9094555f5b6432b",
+    "packet_refinement.csv": "bb2ed588973e18f54a08d8a09197f6de56f2bd015a3ff063a0b3a2f2e5151ade"
+  }
+}

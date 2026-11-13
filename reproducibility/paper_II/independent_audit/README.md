@@ -1,6 +1,6 @@
-# Independent audit of Paper II (Annals of Physics version)
+# Independent audit of Paper II
 
-Paper II: *Modewise freezing, terminal particle structures and local stress in the Schwarzschild interior* (F. R. Villatoro, submitted to Annals of Physics, 2026).
+*Particle creation, terminal states and local stress of a scalar field in the Schwarzschild interior*, F. R. Villatoro (2026).
 
 These two scripts re-derive the symbolic claims of the manuscript and reproduce its Table 1 with an integrator written separately from the production scripts of `reproducibility/paper_II/` (`num_checks.py`, `run_part1.py`, `run_part2.py`, `generic_ray_check.py`, `paper2_symbolic_checks.py`). They do not replace those scripts; they are an independent cross-check of the same results. They were written with the assistance of generative AI tools (ChatGPT, OpenAI; Claude, Anthropic) during the verification of the manuscript, and were reviewed and run by the author, who takes responsibility for them.
 
@@ -15,17 +15,23 @@ These two scripts re-derive the symbolic claims of the manuscript and reproduce 
 
 ## Method of `audit_num.py`
 
-Units $2M = 1$, $\psi = r\phi$, $\eta = -r - \ln(1-r)$ increasing towards the horizon, Jost phase $\psi \sim e^{-iK\eta + i\pi/4}/\sqrt{2K}$. The radial map $r(\eta) = 1 + W_0(-e^{-1-\eta})$ uses the principal branch of the Lambert function. The equation is integrated in $\eta$ from the horizon side ($r_0 = 1 - 10^{-9}$), or from first-order Liouville--Green data at $K\eta = 200$ when $K \ge 10^3$, down to $r = 0.3$, and then in $x = \ln r$ down to $r = 10^{-12}$ (DOP853, relative tolerance $10^{-12}$, absolute tolerance $10^{-16}$). The Frobenius coefficients $(a, b)$ of $\phi = a + b\ln r + \dots$ at $r = 10^{-12}$ are projected onto the endpoint-Hankel pair of the Cortez variables, which gives $(\alpha_H, \beta_H)$; the identity $|\alpha_H|^2 - |\beta_H|^2 = 1$ is monitored and holds to $10^{-11}$ or better in all cases. The printed values labelled "paper" are the entries of Table 1 of the manuscript; those labelled "formula" are Eqs. (6.8)--(6.10).
+Units $2M = 1$, $\psi = r\phi$, $\eta = -r - \ln(1-r)$ increasing towards the horizon, Jost phase $\psi \sim e^{-iK\eta + i\pi/4}/\sqrt{2K}$. The radial map $r(\eta) = 1 + W_0(-e^{-1-\eta})$ uses the principal branch of the Lambert function. The equation is integrated in $\eta$ from the horizon side ($r_0 = 1 - 10^{-9}$), or from first-order Liouville--Green data at $K\eta = 200$ when $K \ge 10^3$, down to $r = 0.3$, and then in $x = \ln r$ down to $r = 10^{-12}$ (DOP853, relative tolerance $10^{-12}$, absolute tolerance $10^{-16}$). The Frobenius coefficients $(a, b)$ of $\phi = a + b\ln r + \dots$ at $r = 10^{-12}$ are projected onto the endpoint-Hankel pair of the Cortez variables, which gives $(\alpha_H, \beta_H)$. The largest printed absolute residual of $|\alpha_H|^2 - |\beta_H|^2 = 1$ in the frozen output is $1.9\times10^{-11}$. The values labelled "paper" are the entries of Table 1 of the manuscript. Those labelled "formula" are Eqs. (6.8)--(6.10).
 
 ## How to run
 
+Run from the repository root with the pinned dependencies installed:
+
+```sh
+python3 tools/validate_v120.py --paper II --mode full --report /tmp/schwarzschild_v130_paperII.json
 ```
-python3 audit_sym.py > audit_sym_output.txt
-python3 audit_num.py > audit_num_output.txt        # SKIP_A=1 python3 audit_num.py skips part (A)
-```
 
-Tested with Python 3.13, NumPy 2.5, SciPy 1.18, SymPy 1.14 and mpmath 1.3. Table 1 is reproduced to all printed digits; the relative deviations of the directional benchmark are approximately 0.5% at $\kappa = 10$ (one value is 0.5013%) and 0.11--0.37% at $\kappa = 40$.
+The full run includes part (A) and writes reports and logs outside the
+repository. The comparator removes elapsed-time suffixes. It permits an
+absolute difference of at most `1e-13` in the printed B1/B3 norm residuals
+and requires exact equality for all other fields. The report records the
+reference value, actual value and difference for each norm residual.
 
-## Release integration notice (v1.2.0)
-
-The submitted output files have been preserved byte-for-byte. The title above has been harmonized with the Annals of Physics TEX in the available working archive, which has a different title from the independent-audit ZIP's addendum. Please confirm the definitive submission title before publishing. The fast-check helper is separate from the supplied numerical audit; it exercises a representative subset without the computationally expensive special-function integrals and horizon-start K=10^4 cross-check. Full verification of those steps must not be inferred from the fast check.
+The frozen output reproduces Table 1 to all printed digits. The directional
+benchmark deviations shown there are within 0.5% at $\kappa = 10$ and 0.4%
+at $\kappa = 40$. See the [historical execution record](VALIDATION.md) for the
+scope of the Abel quadrature diagnostic.

@@ -1,8 +1,19 @@
 # Changelog
 
+## v1.3.0 — 2026-11-10
+
+- Added the Paper II supplementary scalar scripts for three s-wave refinements, 48/96-node packet refinements, the normalized Table 2 and 20 independent Ward-identity cases.
+- Exported the selected Table 1 and Table 2 rows with their numerical settings and source hashes.
+- Limited the independent scalar stdout tolerance to absolute differences of at most `1e-13` in the B1/B3 norm residuals. The other fields remain exact after elapsed times are removed.
+- Bounded the infrared Jost norm defect by `1e-6`, with exact frequencies and the standard tolerances on the scaled amplitude.
+- Checked the derived `additive_error` and `bound_ratio` in the Paper III terminal-bound rows by reconstruction with a roundoff budget.
+- Added historical fermionic phase-0 and phase-2 diagnostics with their auxiliary convention documented.
+- Verified root and nested manifest coverage and freshly generated fermionic tables against the frozen references. Full validation passed in WSL.
+- Preserved the v1.1.0 scientific sources and their published reference outputs.
+
 ## v1.2.0 — 2026-10-28
 
-- Aligned Paper II metadata with its Annals of Physics submitted TEX and updated its MANIFEST cross-references.
+- Aligned Paper II metadata and updated its manuscript cross-references.
 - Added `reproducibility/paper_II/independent_audit/`: independent symbolic and numerical audit scripts, author-supplied outputs, SHA checks, and quick regression test.
 - Preserved the Paper-I and Paper-II production scripts from v1.1.0 without changes.
 

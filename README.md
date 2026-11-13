@@ -3,10 +3,50 @@
 Numerical and symbolic reproducibility package supporting three related manuscripts on quantum fields near the Schwarzschild spacelike singularity:
 
 1. Francisco R. Villatoro, *A universal Kasner scaling limit for Hadamard states in the Schwarzschild interior* (2026).
-2. Francisco R. Villatoro, *Modewise freezing, terminal particle structures and local stress in the Schwarzschild interior* (2026).
+2. Francisco R. Villatoro, *Particle creation, terminal states and local stress of a scalar field in the Schwarzschild interior* (2026).
 3. Francisco R. Villatoro, *Weyl and Dirac fields near the Schwarzschild singularity: terminal structure, universal spin rotation and local stress* (2026).
 
 The repository contains reproducibility material only: scientific Python code, symbolic checks, compact reference outputs, and documentation. It does not contain manuscript source or PDFs.
+
+## Version 1.3.0 — 2026-11-10
+
+Version 1.3.0 adds the Paper II supplementary scalar calculations, refined
+publication tables and Ward-identity checks to the independent scalar audit and
+fermionic suite introduced in v1.2.0. It includes historical phase-0 and phase-2
+fermionic diagnostics alongside the Work1–Work8 checks. The v1.1.0 scientific
+sources and reference outputs are preserved byte for byte.
+
+The joint validator allows an absolute difference of `1e-13` in the printed
+B1/B3 scalar norm residuals. It checks the infrared Jost norm defect against an
+absolute bound of `1e-6` and compares the scaled amplitude at the standard
+CSV tolerances. The fermionic runner reconstructs the two derived error columns
+in `terminal_bounds.csv` and accounts for roundoff in their comparison. See the
+[reproducibility manifest](reproducibility/MANIFEST.md) for the result mapping
+and exact refinement settings.
+
+Full validation passed in WSL, including the independent scalar audits, the
+supplementary scalar table and Ward checks, and all 14 fermionic stages. The
+report records the checks and comparisons and identifies any saved audit output
+reused during a resumed run. Run the joint checks from the repository root:
+
+```bash
+python3 tools/validate_v120.py --mode quick --report /tmp/schwarzschild_v130_quick.json
+python3 tools/validate_v120.py --mode full --report /tmp/schwarzschild_v130_full.json
+```
+
+Use Python 3.11 or newer with the root requirements installed. The validator
+checks the release manifests and runs the scripts in temporary copies. Full
+mode includes the complete numerical audit with `SKIP_A` unset.
+
+Cite the GitHub release tag [v1.3.0](https://github.com/FrancisRVillatoro/schwarzschild-one-particle-reproducibility/releases/tag/v1.3.0)
+and the version-specific Zenodo DOI once the archive is available.
+
+## Version 1.2.0 — 2026-10-28
+
+The [v1.2.0 release](https://github.com/FrancisRVillatoro/schwarzschild-one-particle-reproducibility/releases/tag/v1.2.0)
+introduced the Paper II independent symbolic and numerical audit and the Paper
+III Weyl/Dirac reproducibility tree, including the fast and full fermionic
+runners.
 
 ## Version 1.1.0
 
@@ -23,19 +63,7 @@ Major additions relative to v1.0.0 include:
 The archived v1.0.0 release remains immutable and can be used to reproduce the earlier manuscript state.
 
 
-## Paper II — independent Annals of Physics audit (v1.2.0)
-
-The v1.1.0 scalar production scripts remain unchanged. Version v1.2.0 adds
-`reproducibility/paper_II/independent_audit/` with separate symbolic and
-numerical scripts, submitted reference outputs, SHA-256 checks and a short
-independent fast reproduction. Run
-`python reproducibility/paper_II/independent_audit/check_quick_independent.py`
-for fast verification; the full `audit_num.py` includes an expensive
-horizon-start test at K=10^4 and special-function quadratures and can take
-substantially longer. The versioned archive does not modify the Paper II
-manuscript or v1.1.0. Consult `reproducibility/MANIFEST.md` for scope.
-
-## Paper III — Weyl and Dirac fields (v1.2.0)
+## Paper III — Weyl and Dirac fields
 
 Fermionic reproducibility source and frozen numerical checks have been added in
 `reproducibility/paper_III/`. They support the separate manuscript
@@ -59,11 +87,12 @@ remain unchanged from v1.1.0.
 ## Repository layout
 
 - `reproducibility/paper_I/` — Kasner scaling fixed-point numerical/symbolic calculations and convergence audits.
-- `reproducibility/paper_II/` — original scalar production checks plus a v1.2.0 independent symbolic/numerical audit.
+- `reproducibility/paper_II/` — particle-number, endpoint-Hankel, ultraviolet-obstruction and one-particle-stress checks.
 - `reproducibility/paper_III/` — fermionic CAR/Hadamard, spin-harmonic, universal rotation, Hilbert--Schmidt and continuum-stress checks.
 - `reproducibility/MANIFEST.md` — detailed mapping from manuscript results to scripts and frozen outputs.
-- `run_quick_checks.sh` — fast symbolic checks for both papers.
-- `run_full_reproduction.sh` — principal numerical and symbolic calculations for both papers.
+- `run_quick_checks.sh` — fast symbolic checks for Papers I and II.
+- `run_full_reproduction.sh` — principal numerical and symbolic calculations for Papers I and II.
+- `tools/validate_v120.py` — joint validation for the Paper II supplementary calculations and the Paper III suite.
 - `requirements.txt` — Python dependencies.
 - `CITATION.cff` — citation metadata used by GitHub/Zenodo.
 - `SHA256SUMS` — release integrity manifest.
@@ -113,7 +142,7 @@ Files explicitly marked as legacy in `reproducibility/MANIFEST.md` are retained 
 
 ## Data availability and scope
 
-The Jiang--Jiang Schwarzschild coefficients are used only as external benchmarks. No manuscript source or PDF is stored in this repository. The manuscripts are scientifically distinct but share this reproducibility archive.
+The Jiang--Jiang Schwarzschild coefficients are used only as external benchmarks. No manuscript source or PDF is stored in this repository. The three manuscripts are scientifically distinct but share this reproducibility archive.
 
 ## License
 
@@ -121,4 +150,4 @@ The code and associated reproducibility files are released under the MIT License
 
 ## Funding
 
-The earlier scalar reproducibility project acknowledges PPRO-B4-2026-004, Universidad de Málaga. Funding applicable to the fermionic study must be confirmed by the author before use in the journal manuscript.
+The scalar reproducibility project acknowledges PPRO-B4-2026-004, Universidad de Málaga.

@@ -1,9 +1,11 @@
-# Reproducibility package for three Schwarzschild-interior papers
+# Reproducibility package for the three Schwarzschild-interior papers
 
-Base archive prepared 4 October 2026; scalar independent audit and fermionic material added for v1.2.0. Python 3 with numpy, scipy, sympy, mpmath. Units: the papers' conventions
-(paper I: G = c = hbar = 1, Kasner coordinates with y = 1; paper II: 2M = 1 unless stated).
-Each script writes to standard output; the file `<script>_output.txt` next to it is the output
-of the run used for the manuscripts. Single-core run times are indicated.
+Version 1.3.0. Paper I entries retain their v1.1.0 mapping. Use Python 3.11 or
+newer with the pinned dependencies in [requirements.txt](../requirements.txt).
+Paper I uses G = c = hbar = 1 and Kasner coordinates with y = 1. Paper II uses
+2M = 1 unless stated otherwise. The adjacent output files retain the v1.1.0
+scalar records. The supplementary scripts also write the CSV and JSON files
+listed below. The joint validator runs in disposable copies.
 
 ## paper_I  (A universal Kasner scaling limit for Hadamard states in the Schwarzschild interior)
 
@@ -17,20 +19,39 @@ of the run used for the manuscripts. Single-core run times are indicated.
 | Section 5.2 and Appendix A, mass regulator: exact massive modes versus massless, infrared layer | `check_kasner_massive_IR.py` (archive v1.0.0) | `kasner_massive_IR_layer.csv`, `kasner_massive_IR_renormalized_layer.csv` | 10 min |
 | Legacy checks from archive v1.0.0 (kept for the record) | `check_kasner_rset_symbolics.py`, `check_kasner_uv_tails.py` (the latter only prints c7, d7; their derivation is in `kasner_adiabatic_symbolics.py`); `kasner_delta_dynamic_pieces.csv`, `kasner_complete_rset_summary_v1_0_0.csv` (values superseded by `kasner_complete_rset_output.txt`: the earlier tail of Delta_dyn omitted the lambda^-11 term) | | |
 
-## paper_II  (Modewise freezing, terminal particle structures and local stress in the Schwarzschild interior)
+## paper_II — Particle creation, terminal states and local stress of a scalar field in the Schwarzschild interior
 
-| Manuscript item | Script | Output file | Run time |
-|---|---|---|---|
-| Table 1 (top): massless s wave, kappa |beta_H|^2 for kappa = 2 ... 128 | `num_checks.py` | `num_checks_output.txt` | 1 min |
-| Proposition 9 phase check, beta_H sqrt(kappa) -> D(1+i); Table 1 (bottom), fixed angular towers l = 1,2,3, K = 1e2 ... 1e7, against Theorem 10 | `run_part1.py` (needs `num_checks.py`) | `run_part1_output.txt` | 4 min |
-| Table 2: r^3 Delta rho_E /((3/2)|B_*|^2) for a conditioned packet (l = 0; l = 1 pole; l = 1 equator) and E = 0, 0.5, 2 | `run_part2.py` (needs `num_checks.py`) | `run_part2_output.txt` | 3 min |
-| Eq. (6.6), generic rays lhat^2 = 1/2 and 4/5: |beta_H|^2 kappa^4 against 1/(36 pi^2 lhat^4) | `generic_ray_check.py` (needs `num_checks.py`) | `generic_ray_check_output.txt` | 1 min |
-| Eq. (2.3) for Q, H and its zero at r = 3/4 (Proposition 2), velocity map normalization, sign of the Hankel normalization (2 Im(Pbar Q) = -pi/2), Weber-Schafheitlin integral, D and A_s, Abel-regularized integral 2/pi^2, Theorem 10 algebra, excitation coupling term of Remark 18 | `paper2_symbolic_checks.py` | `paper2_symbolic_checks_output.txt` | 3 min |
-| Summary of the numerical checks as used in the text | | `numerical_checks_results.txt` | |
+Equation and table labels follow the Paper II manuscript. All paths in this
+block are relative to `reproducibility/paper_II/`. The five v1.1.0 production
+scripts and their published outputs remain the scalar baseline.
 
-| Independent symbolic re-derivation of the pump, Cortez variables, deviations, geodesic/Frobenius expansions, count coefficients, coupling term | `independent_audit/audit_sym.py` | `independent_audit/audit_sym_output.txt` | about 10 s |
-| Independent numerical checks of Table 1, Hankel integrals and Abel benchmark (full run includes expensive horizon-start K=10^4) | `independent_audit/audit_num.py` | `independent_audit/audit_num_output.txt` | environment dependent; several minutes or more |
-| Independent quick numeric regression on three high-frequency towers and two ray values | `independent_audit/check_quick_independent.py` | stdout; asserts values and CAR/symplectic normalization | seconds |
+| Manuscript item | Source | Reference output / scope |
+|---|---|---|
+| Table 1 upper block, massless s wave; original default run | `num_checks.py` (unchanged) | `num_checks_output.txt`; use the refined supplemental rows for revised printed digits |
+| Proposition 9, Eqs. (6.3)–(6.4), phase; Table 1 lower block and Theorem 10, Eqs. (6.8)–(6.10) | `run_part1.py` (unchanged; imports `num_checks.py`) | `run_part1_output.txt` |
+| Table 2 original raw horizon diagnostic | `run_part2.py` (unchanged; imports `num_checks.py`) | `run_part2_output.txt`; no normalization silently added to this historical output |
+| Eq. (6.6), directional first-Born benchmark | `generic_ray_check.py` (unchanged) | `generic_ray_check_output.txt`; benchmark, not a proof of a uniform ray remainder |
+| Eq. (2.3), pump; Proposition 2, velocity map and r=3/4; Theorem 10 algebra; Remark 18, coupling | `paper2_symbolic_checks.py` (unchanged) | `paper2_symbolic_checks_output.txt` |
+| Independent symbolic re-derivation: pump (2.3), rescaling (3.5), Lemma 5, series (6.2), geodesics (8.9), Frobenius Appendix F, counts (3.2),(3.4),(3.6), Remark 18 | `independent_audit/audit_sym.py` | `independent_audit/audit_sym_output.txt`; reproduced exactly |
+| Independent integrator: Table 1, Proposition 9 integrals/constants, Theorem 10 towers, Eq. (6.6) | `independent_audit/audit_num.py` | `independent_audit/audit_num_output.txt`; exact comparison apart from elapsed times and the B1/B3 norm-residual tolerance |
+| Table 1 upper block: three endpoint/tolerance levels; Table 2: Z-normalized profile and 48/96 nodes; 29 additional checks | `aop_supplement/check_AoP_revision.py` | `aop_supplement/reference_results/` contains the refined tables, `Jost_IR_diagnostic.csv` and `audit_summary.json` |
+| Additional scalar stress algebra, 20 independent on-shell two-jets | `aop_supplement/check_scalar_Ward.py` | `aop_supplement/reference_results/scalar_Ward_jets.json` |
+| Selection of refined printed rows; no new integration | `aop_supplement/export_publication_tables.py` | `aop_supplement/reference_results/table1_swave_AoP.csv`, `table2_AoP.csv`, `publication_table_sources.json` |
+
+**Refined rows.** Table 1 upper block uses r_min=1e-14, rtol=2e-13,
+atol=2e-15. Table 2 uses 96 Gauss–Legendre nodes at the same fine tolerances.
+Z=2.5086142772483844. The supplement retains both coarser s-wave runs and the
+48-node packet for comparison. The old tables/outputs are not overwritten.
+The phase proposition is Proposition 9; Proposition 2 labels the velocity map.
+
+**Comparison rules.** The independent audit uses an absolute tolerance of
+`1e-13` only for printed B1/B3 normalization residuals. The symbolic output
+and the other numerical fields are compared exactly after elapsed-time suffixes
+are removed. For `Jost_IR_diagnostic.csv`, frequencies are compared exactly,
+the scaled amplitude uses `rtol=5e-9` and `atol=5e-11`, and both recorded
+norm defects must lie in `[0, 1e-6]`. See the
+[independent audit](paper_II/independent_audit/README.md) and
+[supplementary calculations](paper_II/aop_supplement/README.md).
 
 ## Notes
 * `num_checks.py` integrates the interior radial equation exactly from the horizon-Jost condition (state variable ln(1-r) near the horizon) and, for K >= 1e3, starts from first-order Liouville-Green data at K eta = 200 (`endpoint_coeffs_LG`), validated against the full integration at K = 1e3.
@@ -38,13 +59,13 @@ of the run used for the manuscripts. Single-core run times are indicated.
 * Uncertainties quoted in the papers: C_dyn +/- 4e-10 (dominated by the cutoff test of the fitted tail), Delta_dyn +/- 2e-10 (conservative; the convergence study gives 7e-11), see `convergence_results.txt` and `kasner_complete_rset_output.txt`.
 
 
-## paper_III — fermionic Weyl/Dirac study (v1.2.0)
+## paper_III — fermionic Weyl/Dirac study
 
 All paths below are relative to `reproducibility/paper_III/`. Checks are independent numerical/symbolic diagnostics and do not replace the proofs in the manuscript. Full mode may be CPU-intensive.
 
 | Result | Source code | Frozen outputs / validation |
 |---|---|---|
-| Future-time Dirac evolution and modal CAR algebra | `work1/check_time_orientation.py` | `work1/Work1_checks.json`, `Work1_checks.txt` |
+| Future-time Dirac evolution and modal CAR algebra | `work1/check_time_orientation.py` | `work1/Work1_checks.json`, `work1/Work1_checks.txt` |
 | All-order symbol recurrence: elementary Clifford identities and exponent bookkeeping | `work2/checks/check_symbol_algebra.py` | `work2/checks/check_symbol_algebra_output.txt` |
 | Invariant spin-harmonic kernel, Jacobi/Bessel scaling, Weyl and local stress diagnostics | `work3/checks/` scripts | `work3/checks/invariant_harmonics_*.{csv,json}`, `continuum_*.{csv,json}` |
 | Continuum CAR / conservation / numerical mass cases | `work4/checks/check_work4.py` | `work4/checks/work4_results.json`, `ward_identity_refinement.csv`, `terminal_bounds.csv` |
@@ -53,10 +74,14 @@ All paths below are relative to `reproducibility/paper_III/`. Checks are indepen
 | Massive operator transition block vs averaged probability | `work7/checks_work7.py` | `work7/massive_operator_diagnostics.json` |
 | Pure CAR state / mixed restriction / rank-one particle-antiparticle algebra | `work8/checks/check_priority4.py` | `work8/results/priority4_exact_CAR_checks.json` |
 
-Run `bash run_quick_checks_paper_III.sh` or `bash run_full_reproduction_paper_III.sh` from the root. See `reproducibility/paper_III/README.md` for exact limitations and environment.
+Run `bash run_quick_checks_paper_III.sh` or `bash run_full_reproduction_paper_III.sh`
+from the root. The full runner checks each terminal-bound row, reconstructs
+`additive_error` and `bound_ratio`, and records the floating-point roundoff
+budgets for those columns. See the [Paper III guide](paper_III/README.md).
 
-## v1.2.0 editorial and numerical audit note
+## Historical Paper III diagnostics
 
-The Paper II title above follows the locally available Annals of Physics submission TEX. The author-supplied independent-audit ZIP used the alternative title "Particle creation, terminal states and local stress of a scalar field in the Schwarzschild interior". Confirm the actual submission title before the GitHub release if a later author revision superseded the supplied TEX.
-
-The directional first-Born benchmark is not a rigorous uniform estimate. The independent run's recorded deviations at kappa=40 are +0.11% (lhat^2=1/2) and +0.37% (lhat^2=4/5). They should not be described collectively as <0.1%.
+`paper_III/legacy_phase2/` contains the supplied phase-0 evolution, phase-2 counts,
+finite-mode packet and local stress-identity scripts, with their original source
+bytes and documented auxiliary sign convention. The Work1–Work8 sources provide
+the production checks.

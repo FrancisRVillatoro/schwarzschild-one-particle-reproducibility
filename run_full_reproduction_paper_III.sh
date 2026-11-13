@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
+set -euo pipefail
+unset PYTHONOPTIMIZE
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-python "$ROOT/reproducibility/paper_III/run_checks.py" --mode full "$@"
+PY="${SCHWARZSCHILD_PYTHON:-python3}"
+"$PY" -c 'import sys; sys.exit(0 if sys.version_info >= (3,11) else "Python 3.11 or newer is required")'
+exec "$PY" "$ROOT/reproducibility/paper_III/run_checks.py" --mode full "$@"

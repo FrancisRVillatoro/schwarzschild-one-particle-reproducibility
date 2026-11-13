@@ -1,0 +1,138 @@
+{
+  "checks": [
+    {
+      "name": "pump formula",
+      "pass": true
+    },
+    {
+      "name": "H formula",
+      "pass": true
+    },
+    {
+      "name": "maximal volume",
+      "pass": true
+    },
+    {
+      "name": "pump H identity",
+      "pass": true
+    },
+    {
+      "name": "logarithmic Wronskian",
+      "pass": true
+    },
+    {
+      "name": "canonical log cancellation",
+      "pass": true
+    },
+    {
+      "name": "velocity Bogoliubov norm",
+      "pass": true
+    },
+    {
+      "name": "selected count leading factor",
+      "pass": true
+    },
+    {
+      "name": "fixed-tower normalization",
+      "pass": true
+    },
+    {
+      "name": "fixed-tower occupation",
+      "pass": true
+    },
+    {
+      "name": "fixed-tower symmetric ratio",
+      "pass": true
+    },
+    {
+      "name": "fixed-tower logarithmic matching",
+      "pass": true
+    },
+    {
+      "name": "fixed-tower constant matching",
+      "pass": true
+    },
+    {
+      "name": "radial energy coefficient",
+      "pass": true
+    },
+    {
+      "name": "sigma E leading coefficient",
+      "pass": true
+    },
+    {
+      "name": "mixed flux coefficient",
+      "pass": true
+    },
+    {
+      "name": "curvature improvement factor",
+      "pass": true
+    },
+    {
+      "name": "proper time to areal log factor",
+      "pass": true
+    },
+    {
+      "name": "IR weighted power",
+      "pass": true
+    },
+    {
+      "name": "finite-particle projection tends to zero",
+      "value": 4.051258084669662e-06,
+      "bound": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "scalar CCR smooth rank-two change",
+      "value": 1.831026719408895e-15,
+      "bound": 2e-13,
+      "pass": true
+    },
+    {
+      "name": "mode dimension",
+      "pass": true
+    },
+    {
+      "name": "packet dimension",
+      "pass": true
+    },
+    {
+      "name": "stress dimension",
+      "pass": true
+    },
+    {
+      "name": "B connection dimension",
+      "pass": true
+    },
+    {
+      "name": "refined s-wave Wronskian",
+      "value": 2.7755575615628914e-14,
+      "bound": 1e-10,
+      "pass": true
+    },
+    {
+      "name": "horizon normalization Bessel identity",
+      "value": 0.0,
+      "bound": 1e-14,
+      "pass": true
+    },
+    {
+      "name": "96-node horizon profile normalization",
+      "value": 3.552713678800501e-15,
+      "bound": 1e-11,
+      "pass": true
+    },
+    {
+      "name": "s-wave gamma coefficient",
+      "value": 4.180544799226027e-13,
+      "bound": 5e-13,
+      "pass": true
+    }
+  ],
+  "count": 29,
+  "all_pass": true,
+  "Z": 2.5086142772483844,
+  "D": 0.4571337180707731,
+  "As": 0.41794247239441806,
+  "notes": "Floating-point diagnostics are not interval-certified. The archived scripts are preserved unchanged."
+}

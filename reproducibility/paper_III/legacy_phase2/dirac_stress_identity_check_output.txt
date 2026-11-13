@@ -1,0 +1,1 @@
+max relative |LHS-RHS| over 20 random draws (3 modes, lambda in {-2,1,3}, m in [0,2]): 1.30e-15

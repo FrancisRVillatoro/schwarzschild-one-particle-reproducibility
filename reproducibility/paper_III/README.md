@@ -1,4 +1,4 @@
-# Paper III — fermionic reproducibility (v1.2.0)
+# Paper III — fermionic reproducibility
 
 Supporting *Weyl and Dirac fields near the Schwarzschild singularity: terminal structure, universal spin rotation and local stress* (2026), separate from the two scalar papers.
 
@@ -15,7 +15,13 @@ bash run_quick_checks_paper_III.sh
 bash run_full_reproduction_paper_III.sh
 ```
 
-The fast suite runs the time-orientation, symbol-bookkeeping, spin/algebra, CAR and massive operator checks, plus a freshly integrated nonmonotonic `F` window. The full suite also regenerates the invariant angular kernels, two continuum-packet campaigns, Ward/CAR diagnostics, the detailed `F` and `C_F` convergence studies, the window coefficient and the Hilbert--Schmidt toy multiplicities. **Full mode is CPU-intensive.** The historical manuscript-format validators are not included: they depended on original WorkX TEX files, whereas this repository intentionally contains only data and code.
+The fast suite runs the time-orientation, symbol-bookkeeping, spin/algebra, CAR and massive operator checks, plus a freshly integrated nonmonotonic `F` window. The 14-stage full suite also regenerates the invariant angular kernels, two continuum-packet campaigns, Ward/CAR diagnostics, the detailed `F` and `C_F` convergence studies, the window coefficient and the Hilbert--Schmidt toy multiplicities. **Full mode is CPU-intensive.**
+
+For each row of `work4/checks/terminal_bounds.csv`, the full runner checks that
+the additive density error lies within the explicit bound and reconstructs
+`additive_error` and `bound_ratio` from the reported quantities. It allows
+roundoff before subtracting the two density terms and propagates that budget
+through the ratio. The report records the row-level budgets and comparisons.
 
 ## Scientific mapping
 
@@ -39,4 +45,6 @@ The fast suite runs the time-orientation, symbol-bookkeeping, spin/algebra, CAR 
 
 ## Release and version
 
-This directory is part of **v1.2.0**. The DOI will be assigned by Zenodo *after* a tagged GitHub release. Do not substitute the v1.1.0 specific DOI (10.5281/zenodo.23154909) for a release containing the fermionic scripts. Keep GitHub/Zenodo v1.1.0 immutable. The root `SHA256SUMS` must be regenerated after overlay application in the complete Git checkout. `SHA256SUMS` in this folder covers only these Paper-III files.
+This guide describes [v1.3.0](../../CITATION.cff). Cite the release tag and its
+version-specific Zenodo DOI once the archive is available. The local
+`SHA256SUMS` covers the Paper III tree.
