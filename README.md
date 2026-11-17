@@ -3,10 +3,22 @@
 Numerical and symbolic reproducibility package supporting three related manuscripts on quantum fields near the Schwarzschild spacelike singularity:
 
 1. Francisco R. Villatoro, *A universal Kasner scaling limit for Hadamard states in the Schwarzschild interior* (2026).
-2. Francisco R. Villatoro, *Particle creation, terminal states and local stress of a scalar field in the Schwarzschild interior* (2026).
+2. Francisco R. Villatoro, *Terminal scalar states, Hadamard obstruction and local stress in the Schwarzschild interior* (2026).
 3. Francisco R. Villatoro, *Weyl and Dirac fields near the Schwarzschild singularity: terminal structure, universal spin rotation and local stress* (2026).
 
 The repository contains reproducibility material only: scientific Python code, symbolic checks, compact reference outputs, and documentation. It does not contain manuscript source or PDFs.
+
+## Version 1.3.1 — 2026-11-17
+
+This packaging release adds the [frozen Paper II NPB code package](reproducibility/paper_II/npb_20261117/README.md),
+including the independent scalar audit and the validation performed on 17 November 2026.
+The ZIP is preserved byte for byte and has an external SHA-256 checksum;
+its internal manifest validates 61 files. Existing scientific sources and historical
+outputs remain unchanged. The Paper II title is updated to match the NPB submission.
+
+Cite [v1.3.1](https://github.com/FrancisRVillatoro/schwarzschild-one-particle-reproducibility/releases/tag/v1.3.1)
+and its version-specific Zenodo DOI once assigned. The package README describes
+how to reproduce the NPB checks; the existing joint validator remains available.
 
 ## Version 1.3.0 — 2026-11-10
 

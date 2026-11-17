@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.1 — 2026-11-17
+
+- Added the exact Paper II NPB supplementary code ZIP, its SHA-256 digest, and deposit instructions.
+- Included the existing independent audit and the 17 November 2026 NPB validation records inside that frozen package.
+- Updated the Paper II title and release citation metadata.
+- Preserved previously published scientific scripts and reference outputs.
+- Extended the checksum inventory to include the new deposit.
+
 ## v1.3.0 — 2026-11-10
 
 - Added the Paper II supplementary scalar scripts for three s-wave refinements, 48/96-node packet refinements, the normalized Table 2 and 20 independent Ward-identity cases.
